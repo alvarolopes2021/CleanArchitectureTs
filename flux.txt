@@ -1,0 +1,16 @@
+- ParkingLot
+code 
+capacity
+openHour
+closeHour
+
+- Parked Car
+code 
+plate
+date
+
+
+- UseCase
+
+EnterParkingLot
+LeaveParkingLot

@@ -1,0 +1,32 @@
+{
+  "name": "clean-arch-ts",
+  "version": "1.0.0",
+  "description": "Clean Architecture using TypeScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "main": "tsc && node ./dist/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alvarolopes2021/CleanArchitectureTs.git"
+  },
+  "keywords": [
+    "Clean",
+    "Archtecture",
+    "TypeScript"
+  ],
+  "author": "Álvaro Lopes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alvarolopes2021/CleanArchitectureTs/issues"
+  },
+  "homepage": "https://github.com/alvarolopes2021/CleanArchitectureTs#readme",
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@types/jest": "^29.5.11",
+    "jest": "^29.7.0"
+  }
+}
