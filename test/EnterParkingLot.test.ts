@@ -3,12 +3,25 @@ import ParkingLotRepositorySQL from "../src/core/infra/ParkingLotRepositorySQL";
 import EnterParkingLot from "../src/core/usecase/EnterParkingLot";
 import GetParkingLot from "../src/core/usecase/GetParkingLot";
 
-test.skip("Should enter parking lot", async () => {
+
+test("Should get parking lot", async () => {
     const parkingLotRepositoryMemory = new ParkingLotRepositoryMemory();
+    const parkingLotRepositorySQL = new ParkingLotRepositorySQL();
+    const getParkingLot = new GetParkingLot(parkingLotRepositorySQL);
 
-    const enterParkingLot = new EnterParkingLot(parkingLotRepositoryMemory );
+    const parkingLot = await getParkingLot.execute("shopping");
 
-    const getParkingLot = new GetParkingLot(parkingLotRepositoryMemory);
+    console.log(parkingLot);
+    
+});
+
+test("Should enter parking lot", async () => {
+    const parkingLotRepositoryMemory = new ParkingLotRepositoryMemory();
+    const parkingLotRepositorySQL = new ParkingLotRepositorySQL();
+
+    const enterParkingLot = new EnterParkingLot(parkingLotRepositorySQL);
+
+    const getParkingLot = new GetParkingLot(parkingLotRepositorySQL);
 
     const parkingLotBeforeEnter = await getParkingLot.execute('shopping');
 
@@ -22,17 +35,6 @@ test.skip("Should enter parking lot", async () => {
     
 });
 
-
-test("Should get parking lot", async () => {
-    const parkingLotRepositoryMemory = new ParkingLotRepositoryMemory();
-    const parkingLotRepositorySQL = new ParkingLotRepositorySQL();
-    const getParkingLot = new GetParkingLot(parkingLotRepositorySQL);
-
-    const parkingLot = await getParkingLot.execute("shopping");
-
-    console.log(parkingLot);
-    
-});
 
 
 test.skip("Should be closed", async () => {
